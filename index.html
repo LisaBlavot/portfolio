@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio de Lisa Blavot, étudiante en Master Informatique."
+    />
+    <title>Lisa Blavot | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body data-page="home">
+    <header class="site-header">
+      <a class="brand" href="index.html">Lisa Blavot</a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        Menu
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+        <a href="#projects">Projets</a>
+        <a href="#skills">Compétences</a>
+        <a href="#beyond-code">Au-delà du code</a>
+        <a href="#journey">Parcours</a>
+        <a href="cv.html">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-shell">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Étudiante en Master Informatique</p>
+          <h1>Lisa Blavot</h1>
+          <p class="hero-lead">
+            Bienvenue sur mon portfolio. Découvrez mon parcours, mes projets et les compétences que j'ai développées au cours de mes études.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects"
+              >Voir mes projets</a
+            >
+            <a class="button button-secondary" href="cv.html"
+              >Télécharger mon CV</a
+            >
+          </div>
+        </div>
+
+        <aside class="hero-panel reveal">
+  <div class="hero-panel__card hero-panel__card--photo">
+    <img src="photo-profil.jpg" alt="Photo de Lisa Blavot" />
+  </div>
+</aside>
+
+      </section>
+
+      <section class="section-shell" id="projects">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Projets</p>
+          <h2>Captures, technologies, liens.</h2>
+        </div>
+        <div class="projects-grid" id="projects-grid"></div>
+      </section>
+
+      <section class="section-shell" id="skills">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Compétences</p>
+          <h2>Catégories compactes.</h2>
+        </div>
+        <div class="skills-grid" id="skills-grid"></div>
+      </section>
+
+<section class="section-shell" id="beyond-code">
+  <div class="section-heading reveal">
+    <p class="eyebrow">Au-delà du code</p>
+    <h2>Ce que mes projets m'ont appris</h2>
+  </div>
+
+    <div class="learnings-grid" id="learnings-grid"></div>
+
+  <aside class="learnings-note reveal">
+    <p class="panel-label">Avec le recul</p>
+
+
+<p class="panel-text">
+  Ces projets m'ont appris qu'un bon développement repose aussi sur la
+  capacité à structurer son travail, anticiper les besoins des autres et
+  communiquer clairement. Ce sont des réflexes que je souhaite continuer
+  à développer dans mes prochaines expériences professionnelles.
+</p>
+
+
+  </aside>
+</section>
+
+      
+      <section class="section-shell" id="journey">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Parcours</p>
+          <h2>Une timeline simple.</h2>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <section class="section-shell contact-section" id="contact">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Liens directs.</h2>
+        </div>
+        <div class="contact-links" id="contact-links"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+      <p>Lisa Blavot · Portfolio</p>
+    </footer>
+  </body>
+</html>

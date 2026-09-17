@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Détail d'un projet du portfolio de Lisa Blavot."
+    />
+    <title>Projet | Lisa Blavot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body data-page="project">
+    <header class="site-header">
+      <a class="brand" href="index.html">Lisa Blavot</a>
+      <nav
+        class="site-nav site-nav--project"
+        aria-label="Navigation secondaire"
+      >
+        <a href="index.html#projects">Projets</a>
+        <a href="index.html#skills">Compétences</a>
+        <a href="cv.html">CV</a>
+      </nav>
+    </header>
+
+    <main class="section-shell project-shell" id="project-page">
+      <div class="project-back reveal">
+        <a class="back-link" href="index.html#projects">Retour aux projets</a>
+      </div>
+
+      <article class="project-detail">
+        <div class="project-detail__header reveal">
+          <p class="eyebrow">Projet</p>
+          <h1 id="project-title"></h1>
+          <p class="project-intro" id="project-intro"></p>
+        </div>
+
+        <figure class="project-hero reveal">
+          <img id="project-hero-image" alt="Capture principale du projet" />
+        </figure>
+
+        <section class="detail-block reveal">
+          <h2>Contexte</h2>
+          <p id="project-context"></p>
+        </section>
+
+        <section class="detail-block reveal">
+          <h2>Objectif</h2>
+          <p id="project-objective"></p>
+        </section>
+
+        <section class="detail-block reveal">
+          <h2>Technologies</h2>
+          <div class="tag-row" id="project-tech"></div>
+        </section>
+
+        <section class="detail-block reveal">
+          <h2>Mon rôle</h2>
+          <ul class="compact-list" id="project-role"></ul>
+        </section>
+
+        <section class="detail-block reveal">
+          <h2>Ce que j’ai réalisé</h2>
+          <ul class="compact-list" id="project-achievements"></ul>
+        </section>
+
+        <section class="detail-block reveal">
+          <h2>Difficultés / solutions</h2>
+          <div class="problem-solution" id="project-problem"></div>
+        </section>
+
+        <section class="detail-block reveal">
+          <h2>Résultat</h2>
+          <p id="project-result"></p>
+          <div class="gallery" id="project-gallery"></div>
+          <p id="project-result-caption" class="project-result-caption"></p>
+        </section>
+
+        <section class="detail-block reveal">
+          <h2>Liens</h2>
+          <div class="project-links" id="project-links"></div>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
