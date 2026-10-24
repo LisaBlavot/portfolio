@@ -26,6 +26,18 @@ const portfolio = {
         "Synchronisation avec le graphe V2V",
         "Aide à l’intégration finale",
       ],
+      validation: {
+        note:
+          "Les vérifications suivantes ont été réalisées pendant le développement et l’intégration du projet. Elles décrivent une démarche de validation fonctionnelle, sans prétendre constituer un plan de test industriel formalisé.",
+        checks: [
+          "Vérification du déplacement des véhicules sur le graphe routier et de la cohérence de leur évolution dans le temps",
+          "Tests des contrôles de lecture : lancement, pause, reprise et variation de la vitesse de simulation",
+          "Contrôle de la création, de la mise à jour et de l’affichage des connexions V2V entre véhicules",
+          "Vérification de la cohérence entre les données de simulation, la carte et les éléments affichés dans l’interface",
+          "Essais avec un volume d’environ 2 000 véhicules pour repérer les ralentissements et préserver la fluidité de l’affichage",
+          "Correction des anomalies observées puis nouvelle vérification lors de l’intégration des différents modules",
+        ],
+      },
       problem: {
         issue:
           "La simulation devait rester fluide malgré un volume élevé d’objets mobiles.",
@@ -37,10 +49,9 @@ const portfolio = {
       technologies: ["C++17", "Qt", "OpenGL", "OpenStreetMap"],
       links: [
         {
-          label: "GitHub",
+          label: "Code",
           href: "https://github.com/PRADES-matteo/ReseauM1S1.git",
         },
-        { label: "Démonstration", href: "#" },
       ],
       theme: {
         top: ["#eef3f7", "#d9e3ec"],
@@ -51,11 +62,11 @@ const portfolio = {
       slug: "erp-comptabilite-analytique",
       title: "ERP analytique",
       summary:
-        "Application Django de comptabilité analytique avec scénarios, résultats et templates métier.",
+        "Application métier Django de comptabilité analytique avec scénarios, résultats et templates adaptés.",
       intro:
-        "Un projet pédagogique pour créer et comparer des scénarios de coûts selon plusieurs méthodes de calcul.",
+        "Une application métier pédagogique pour créer et comparer des scénarios de coûts selon plusieurs méthodes de calcul.",
       context:
-        "Application Django développée pour gérer des scénarios de comptabilité analytique et analyser les coûts selon trois approches : direct costing, direct costing évolué et centres d’analyse.",
+        "Application métier Django développée pour gérer des scénarios de comptabilité analytique et analyser les coûts selon trois approches : direct costing, direct costing évolué et centres d’analyse.",
       objective:
         "Permettre la création de scénarios, le calcul des coûts et l’affichage de résultats adaptés aux templates industriel, commercial et services.",
       role: [
@@ -77,7 +88,7 @@ const portfolio = {
           "Séparation des calculs purs, des vues et des templates pour garder une lecture simple et structurée.",
       },
       result:
-        "Un ERP pédagogique centré sur la gestion des coûts, avec des scénarios exploitables et des écrans dédiés aux résultats.",
+        "Une application métier de type ERP centrée sur la gestion des coûts, avec des scénarios exploitables et des écrans dédiés aux résultats.",
       technologies: ["Python", "Django", "SQLite", "HTML/CSS"],
 
       coverImage: "images/erp-cover.jpg",
@@ -224,7 +235,7 @@ const portfolio = {
 
   journey: [
     {
-      year: "2025-2026",
+      year: "2025-2027",
       title: "Master 1, Informatique et mobilité",
       school: "Université de Haute-Alsace",
     },
@@ -570,7 +581,7 @@ function renderHome() {
             });
 
         return `
-          <article class="project-card reveal">
+          <article class="project-card reveal" data-project-slug="${escapeHtml(project.slug)}">
             <a href="projet.html?project=${project.slug}" aria-label="Voir le projet ${escapeHtml(project.title)}">
               <div class="project-card__media">
                 <img src="${image}" alt="Capture du projet ${escapeHtml(project.title)}" />
@@ -672,6 +683,9 @@ function renderProjectPage() {
   const tech = document.getElementById("project-tech");
   const role = document.getElementById("project-role");
   const achievements = document.getElementById("project-achievements");
+  const validationBlock = document.getElementById("project-validation-block");
+  const validationNote = document.getElementById("project-validation-note");
+  const validation = document.getElementById("project-validation");
   const problem = document.getElementById("project-problem");
   const result = document.getElementById("project-result");
   const resultCaption = document.getElementById("project-result-caption");
@@ -709,6 +723,18 @@ function renderProjectPage() {
   achievements.innerHTML = project.achievements
     .map((item) => `<li>${escapeHtml(item)}</li>`)
     .join("");
+  if (validationBlock && validationNote && validation) {
+    const projectValidation = project.validation;
+    validationBlock.hidden = !projectValidation;
+    validationNote.textContent = projectValidation
+      ? projectValidation.note
+      : "";
+    validation.innerHTML = projectValidation
+      ? projectValidation.checks
+          .map((item) => `<li>${escapeHtml(item)}</li>`)
+          .join("")
+      : "";
+  }
   problem.innerHTML = `
     <div class="ps-card">
       <strong>Problème</strong>

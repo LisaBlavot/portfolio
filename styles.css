@@ -160,9 +160,12 @@ p {
 .project-intro,
 .cv-lead {
   margin-top: 1rem;
-  max-width: 32rem;
   font-size: 1.04rem;
   color: var(--muted);
+}
+
+.hero-lead {
+  max-width: none;
 }
 
 .hero-actions {
@@ -306,6 +309,24 @@ section {
   background: linear-gradient(160deg, rgba(31, 75, 62, 0.13), rgba(21, 21, 21, 0.05));
 }
 
+.project-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-card[data-project-slug="erp-comptabilite-analytique"] {
+  order: 1;
+}
+
+.project-card[data-project-slug="v2v-simulateur"] {
+  order: 2;
+}
+
+.project-card[data-project-slug="archiweb-coach-sportif"] {
+  order: 3;
+}
+
 .project-card__body {
   padding: 1.1rem;
 }
@@ -388,7 +409,7 @@ section {
 
 .learnings-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-top: 1.5rem;
 }
@@ -397,8 +418,8 @@ section {
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
   background: var(--surface-strong);
-  box-shadow: var(--shadow);
-  padding: 1.4rem;
+  box-shadow: 0 10px 30px rgba(15, 15, 15, 0.05);
+  padding: 1.25rem 1.35rem;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -444,6 +465,7 @@ section {
 .learning-card__text {
   color: var(--muted);
   font-size: 0.96rem;
+  max-width: 52ch;
 }
 
 .learning-card__context {
@@ -454,12 +476,23 @@ section {
 }
 
 .learnings-note {
-  margin-top: 1.5rem;
-  padding: 1.45rem;
+  width: 100%;
+  margin: 1.5rem 0 0;
+  padding: 1.5rem 1.6rem;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(31, 75, 62, 0.08), rgba(255, 255, 255, 0.95));
-  box-shadow: var(--shadow);
+  border: 1px solid rgba(31, 75, 62, 0.3);
+  background: var(--accent);
+  box-shadow: 0 16px 38px rgba(31, 75, 62, 0.18);
+}
+
+.learnings-note .panel-label {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.learnings-note .panel-text {
+  width: 100%;
+  max-width: none;
+  color: white;
 }
 
 .learning-card:nth-child(1) { animation-delay: 0ms; }
@@ -572,7 +605,9 @@ section {
 
 .project-hero {
   overflow: hidden;
-  margin: 1rem 0 1.25rem;
+  margin: 1rem 0 0.35rem;
+  background: transparent;
+  line-height: 0;
 }
 
 .project-hero img,
@@ -580,6 +615,7 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .detail-block {
