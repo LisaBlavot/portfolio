@@ -111,7 +111,7 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
   gap: 1.25rem;
-  padding: 4rem 0 2.5rem;
+  padding: 2.75rem 0 1.75rem;
   align-items: stretch;
 }
 
@@ -127,7 +127,7 @@ a {
 }
 
 .hero-copy {
-  padding: 3.2rem;
+  padding: 2.4rem;
   border-radius: var(--radius-xl);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.64));
   border: 1px solid var(--line);
@@ -239,7 +239,7 @@ p {
 .hero-panel__card--photo {
   padding: 0;
   overflow: hidden;
-  aspect-ratio: 1/1;
+  aspect-ratio: 4/3;
 }
 
 .hero-panel__card--photo img {
